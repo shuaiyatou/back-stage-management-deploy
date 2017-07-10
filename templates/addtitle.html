@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--开启ie8大的渲染模式-->
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <!--配置视窗-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>添加文章</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <script src="{{ url_for('static', filename='js/jquery-3.1.0.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+<body>
+<!--制作导航-->
+<nav class="navbar navbar-default" id="navigator">
+    <div class="container">
+        <!--小屏幕的导航和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#col">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ url_for('.index')}}" class="navbar-brand">Eshan-colleen</a>
+        </div>
+
+        <!--导航的制作-->
+        <div class="navbar-collapse collapse" id="col">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('.index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台管理</a></li>
+                <li><a href="{{ url_for('.user')}}"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a></li>
+                <li class="active"><a href="{{ url_for('.content')}}"><span class="glyphicon glyphicon-list-alt "></span>&nbsp;&nbsp;内容管理</a></li>
+                <li><a href="{{ url_for('.tag')}}"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">admin
+                        <span class="caret"></span>
+                        <ul class="dropdown-menu ">
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a>
+                            </li>
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a>
+                            </li>
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a>
+                            </li>
+                            <li>
+                                <a href=""> <span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a>
+                            </li>
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a>
+                            </li>
+                        </ul>
+                    </a>
+                </li>
+                <li><a href="#luntan"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<section id="add">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="{{ url_for('.content')}}" class="list-group-item">管理文章</a>
+                    <a href="" class="active list-group-item">添加文章</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="page-header">添加文章</div>
+                <form action="">
+                    <div class="form-group">
+                        <label for="">文章标题</label>
+                        <input type="text" placeholder="标题" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">文章内容</label>
+                        <textarea name="" id="" cols="30" placeholder="内容" rows="10" class="form-control"></textarea>
+                    </div>
+                    
+                </form>
+
+                <div class="row">
+                    <div class="col-md-2 pull-left">
+                        <input type="checkbox">全局置顶
+                    </div>
+                    <div class="col-md-10">
+
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <input type="button" class="btn btn-default" value="发布文章">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="footer">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p>Copyright &nbsp;2016-2017 <a href="https://shuaiyatou.github.io/">https://shuaiyatou.github.io/</a>colleen的博客</p>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>

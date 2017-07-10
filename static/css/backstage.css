@@ -1,0 +1,26 @@
+#warning{
+     margin-top: 70px;
+ }
+
+.img64{
+
+    width:64px;
+    height:64px;
+    border-radius: 50%;
+}
+
+.liuyan{
+    margin: 10px 0;
+    width:60px;
+}
+
+
+#user_manage form{
+    padding:10px 10px;
+    border:1px solid lightgray;
+    border-top: none;
+}
+
+#tag .col-md-2{
+    margin: 10px 0;
+}

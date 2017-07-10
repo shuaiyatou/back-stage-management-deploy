@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--开启ie8大的渲染模式-->
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <!--配置视窗-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>bootstrape的个人网站制作</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <!--<link rel="stylesheet" href="css/bootstrape-colleen.css">-->
+    <script src="{{ url_for('static', filename='js/jquery-3.1.0.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <!--<script src="js/colleen.js"></script>-->
+
+</head>
+
+<body>
+<!--制作导航-->
+<nav class="navbar navbar-default" id="navigator">
+    <div class="container">
+        <!--小屏幕的导航和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#col">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ url_for('.index')}}" class="navbar-brand">Eshan-colleen</a>
+        </div>
+
+        <!--导航的制作-->
+        <div class="navbar-collapse collapse" id="col">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('.index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台管理</a></li>
+                <li class="active"><a href="{{ url_for('.user')}}"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a></li>
+                <li><a href="{{ url_for('.content')}}"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;内容管理</a></li>
+                <li><a href="{{ url_for('.tag')}}"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">admin
+                        <span class="caret"></span>
+                        <ul class="dropdown-menu ">
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a>
+                            </li>
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a>
+                            </li>
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a>
+                            </li>
+                            <li>
+                                <a href=""> <span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a>
+                            </li>
+                            <li>
+                                <a href=""><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a>
+                            </li>
+                        </ul>
+                    </a>
+                </li>
+                <li><a href="#luntan"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!--用户管理-->
+<section id="user_manage">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="#" class="active list-group-item">用户管理</a>
+                    <a href="{{ url_for('.user_search')}}" class="list-group-item">用户搜索</a>
+                    <a href="#" class="list-group-item" role="button" data-toggle="modal" data-target="#myModal">用户管理</a>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="page-header">用户管理</div>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#">用户管理</a></li>
+                        <li class=""><a href="{{ url_for('.user_search')}}">搜索</a></li>
+                        <li class=""><a href="#" role="button" data-toggle="modal" data-target="#myModal">添加用户</a></li>
+                    </ul>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>邮箱</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>张三</td>
+                        <td>1234@hotmai.com</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >
+                                    操作<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">编辑</a></li>
+                                    <li><a href="">删除</a></li>
+                                    <li><a href="">锁定</a></li>
+                                    <li><a href="">修改密码</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <nav aria-label="..." class="pull-right">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li class=""><a href="#">2</a></li>
+                        <li class=""><a href="#">3</a></li>
+                        <li class=""><a href="#">4</a></li>
+                        <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+
+                    </ul>
+                </nav>
+
+            </div>
+    </div>
+    </div>
+</section>
+
+<!-- Modal-->
+<!-- Button trigger modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="">用户名</label>
+                        <input type="text" class="form-control" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input type="password" class="form-control" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="">确认密码</label>
+                        <input type="password" class="form-control" placeholder="请确认密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="">请确认用户邮箱</label>
+                        <input type="email" class="form-control" placeholder="请输入邮箱">
+                    </div>
+                    <div class="form-group">
+                        <label for="s2">用户组</label>
+                        <select name="" id="s2" class="form-control">
+                            <option value="one">会员注册</option>
+                            <option value="two">用户名</option>
+                            <option value="three">密码</option>
+                            <option value="four">确认密码</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="footer">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p>Copyright &nbsp;2016-2017 <a href="https://shuaiyatou.github.io/">https://shuaiyatou.github.io/</a>colleen的博客</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
